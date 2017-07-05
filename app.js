@@ -8,7 +8,7 @@ const express = require('express')
 
 const app = express();
 var context = {};
-
+ 
 app.use('/static', express.static(path.join(__dirname, 'static')));
 
 app.engine('mustache', mustacheExpress());

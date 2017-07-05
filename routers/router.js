@@ -13,6 +13,8 @@ module.exports = function (app) {
 
   controllerRouter.get('/', routerHelpers.debugMiddleware, controller.redirect);
   controllerRouter.get('/users', routerHelpers.debugMiddleware, controller.list);
+  controllerRouter.get('/employed', routerHelpers.debugMiddleware, controller.employed);
+  controllerRouter.get('/unemployed', routerHelpers.debugMiddleware, controller.unemployed);
   controllerRouter.get('/user/:selectedUser', routerHelpers.debugMiddleware, controller.detail);
 
   app.use('/', controllerRouter);

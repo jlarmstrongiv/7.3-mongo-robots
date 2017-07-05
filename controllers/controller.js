@@ -1,8 +1,8 @@
 module.exports = {
   list: (req, res) => {
     context = {};
-    const col = req.db.collection('users');
 
+    const col = req.db.collection('users');
     col.find({}).toArray((error, results) => {
       context.results = results;
 
@@ -27,6 +27,34 @@ module.exports = {
 
       console.log(context);
       return res.render('user', context);
+    });
+  },
+  employed: (req, res) => {
+    context = {};
+
+    const col = req.db.collection('users');
+    col.find({job: {$ne: null}}).toArray((error, results) => {
+      context.results = results;
+
+      context.pageName = 'Employed';
+      context.pageTitle = 'Employed';
+
+      console.log(context);
+      return res.render('users', context);
+    });
+  },
+  unemployed: (req, res) => {
+    context = {};
+
+    const col = req.db.collection('users');
+    col.find({job: null}).toArray((error, results) => {
+      context.results = results;
+
+      context.pageName = 'Employed';
+      context.pageTitle = 'Employed';
+
+      console.log(context);
+      return res.render('users', context);
     });
   },
   redirect: (req, res) => {
