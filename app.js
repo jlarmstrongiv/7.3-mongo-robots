@@ -17,7 +17,7 @@ app.set('view engine', 'mustache');
 app.set('layout', 'layout');
 
 // Mongo Middleware
-app.use(function(req, res, next){
+app.use(function(req, res, next) {
   MongoClient.connect('mongodb://localhost:27017/jlaiv-newdb', (error, db) => {
     console.log(error);
     req.db = db;

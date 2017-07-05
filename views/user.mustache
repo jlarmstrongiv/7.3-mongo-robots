@@ -1,0 +1,12 @@
+<ul class="list">
+  {{#results}}
+  <li class="list-user user"
+    <img class="list-cont__avatar avatar --top-left" src="{{avatar}}" alt="{{name}}">
+    <div class="list-cont__info-group">
+      <h3 class="grid-cont__name name">{{name}}</h3>
+      <p>{{city}}, {{country}} | {{^job}}<span class="--hire">Available for Hire</span>{{/job}}{{#job}}{{job}}, {{company}}{{/job}}}</p>
+      <p>{{email}} | {{phone}}</p>
+    </div>
+  </li>
+  {{/results}}
+</ul>

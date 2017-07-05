@@ -1,0 +1,11 @@
+<ul class="grid-cont">
+  {{#results}}
+  <a href="/user/{{username}}" class="grid-cont__user user">
+    <li>
+      <img class="grid-cont__avatar avatar" src="{{avatar}}" alt="{{name}}">
+      <h3 class="grid-cont__name name">{{name}}</h3>
+      <p class="grid-user__description description">{{^job}}<span class="--hire">Available for Hire</span>{{/job}}{{#job}}{{job}}, {{company}}{{/job}}</p>
+    </li>
+  </a>
+  {{/results}}
+</ul>
